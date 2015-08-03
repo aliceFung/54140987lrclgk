@@ -1,0 +1,23 @@
+<%= form_for @playlist do |f| %>
+
+  <p>User this playlist belongs to:</p>
+
+  <%= f.collection_select :user_id, User.all, :id, :name, { include_blank: true } %>
+  <p>Name the playlist:</p>
+  <%= f.label :name %>
+  <%= f.text_area :name %>
+
+
+  <%= f.collection_check_boxes(:song_ids, Song.all, :id, :name) %>
+
+
+
+
+
+
+
+
+  <%= f.submit %>
+
+
+<% end %>
